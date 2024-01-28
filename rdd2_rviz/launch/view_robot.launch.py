@@ -20,10 +20,10 @@ ARGUMENTS = [
 
 def generate_launch_description():
 
-    pkg_rddrone_rviz = get_package_share_directory('rddrone_rviz')
+    pkg_rdd2_rviz = get_package_share_directory('rdd2_rviz')
 
     rviz2_config = PathJoinSubstitution(
-        [pkg_rddrone_rviz, 'rviz', 'robot.rviz'])
+        [pkg_rdd2_rviz, 'rviz', 'nav2', 'robot.rviz'])
 
     rviz_node = Node(
         package='rviz2',

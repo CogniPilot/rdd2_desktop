@@ -1,2 +1,2 @@
-# rddrone_desktop
-Packages for interacting with RDDRONE on a Desktop
+# RDD2 Desktop
+Packages for interacting with RDD2 on a Desktop
