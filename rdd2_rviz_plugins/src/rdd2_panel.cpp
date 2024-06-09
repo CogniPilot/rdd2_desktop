@@ -150,7 +150,7 @@ void RDD2Panel::onInitialize()
             }
             label_mode_.setText(mode_str);
 
-            label_power_.setText(QString("power: ") + QString::number(msg->power, 'f', 2) + "A");
+            label_power_.setText(QString("power: ") + QString::number(msg->power, 'f', 2) + "W");
         });
 }
 
