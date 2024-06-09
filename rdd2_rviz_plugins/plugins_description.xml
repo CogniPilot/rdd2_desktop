@@ -1,0 +1,10 @@
+<library path="rdd2_rviz_plugins">
+
+  <class name="rdd2_rviz_plugins/RDD2Panel"
+         type="rdd2_rviz_plugins::RDD2Panel"
+         base_class_type="rviz_common::Panel">
+    <description>The rdd2 rviz panel.</description>
+  </class>
+
+</library>
+
