@@ -29,8 +29,8 @@ protected:
     QLabel label_arming_;
     QLabel label_fuel_;
     QLabel label_fuel_percentage_;
-    QLabel label_joy_status_;
-    QLabel label_joy_source_;
+    QLabel label_input_status_;
+    QLabel label_input_source_;
     QLabel label_status_message_;
     QLabel label_safety_;
     QLabel label_power_;

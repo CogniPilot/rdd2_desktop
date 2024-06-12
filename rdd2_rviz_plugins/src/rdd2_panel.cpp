@@ -38,8 +38,8 @@ RDD2Panel::RDD2Panel(QWidget* parent)
 
     bottom_right->addWidget(&label_fuel_percentage_);
     bottom_right->addWidget(&label_power_);
-    bottom_right->addWidget(&label_joy_status_);
-    bottom_right->addWidget(&label_joy_source_);
+    bottom_right->addWidget(&label_input_status_);
+    bottom_right->addWidget(&label_input_source_);
 
     setStyleSheet(
         "font: bold;"
@@ -88,33 +88,33 @@ void RDD2Panel::onInitialize()
 
             label_fuel_percentage_.setText(QString("fuel: ") + QString::number(msg->fuel_percentage) + "%");
 
-            QString joy_str = "joy: ";
-            if (msg->joy == msg->JOY_UNKNOWN) {
-                joy_str += " unknown";
-            } else if (msg->joy == msg->JOY_LOSS) {
-                joy_str += " loss";
-            } else if (msg->joy == msg->JOY_DISABLED) {
-                joy_str += " disabled";
-            } else if (msg->joy == msg->JOY_NOMINAL) {
-                joy_str += " nominal";
+            QString input_str = "input: ";
+            if (msg->input_status == msg->STATUS_UNKNOWN) {
+                input_str += " unknown";
+            } else if (msg->input_status == msg->STATUS_LOSS) {
+                input_str += " loss";
+            } else if (msg->input_status == msg->STATUS_DISABLED) {
+                input_str += " disabled";
+            } else if (msg->input_status == msg->STATUS_NOMINAL) {
+                input_str += " nominal";
             } else {
-                joy_str += " unhandled";
+                input_str += " unhandled";
             }
-            label_joy_status_.setText(joy_str);
+            label_input_status_.setText(input_str);
 
-            QString joy_source_str = "joy source: ";
-            if (msg->joy_source == msg->JOY_SOURCE_UNKNOWN) {
-                joy_source_str += " unknown";
-            } else if (msg->joy_source == msg->JOY_SOURCE_ETHERNET) {
-                joy_source_str += " ethernet";
-            } else if (msg->joy_source == msg->JOY_SOURCE_CAN) {
-                joy_source_str += " can";
-            } else if (msg->joy_source == msg->JOY_SOURCE_RADIO_CONTROL) {
-                joy_source_str += " radio control";
+            QString input_source_str = "input source: ";
+            if (msg->input_source == msg->INPUT_SOURCE_UNKNOWN) {
+                input_source_str += " unknown";
+            } else if (msg->input_source == msg->INPUT_SOURCE_ETHERNET) {
+                input_source_str += " ethernet";
+            } else if (msg->input_source == msg->INPUT_SOURCE_CAN) {
+                input_source_str += " can";
+            } else if (msg->input_source == msg->INPUT_SOURCE_RADIO_CONTROL) {
+                input_source_str += " radio control";
             } else {
-                joy_source_str += " unhandled";
+                input_source_str += " unhandled";
             }
-            label_joy_source_.setText(joy_source_str);
+            label_input_source_.setText(input_source_str);
 
             QString safety_str = "safety: ";
             if (msg->safety == msg->SAFETY_UNKNOWN) {
